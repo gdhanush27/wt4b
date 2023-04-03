@@ -1,0 +1,82 @@
+<html>
+    <head >
+    <script>  
+        function validateform(){  
+        var name=document.myform.name.value;  
+        var password=document.myform.password.value;
+        var rpassword=document.myform.rpassword.value;  
+        var ph=document.myform.ph.value;
+        var dob=document.myform.dob.value;
+        var g=document.myform.gender.value;
+        if (name==null || name==""){  
+          alert("Fill the name");  
+          return false;  
+        }else if(password.length<8){  
+          alert("Password should be greater than or equal to 8 lettters");  
+          return false;  
+        }else if(password!=rpassword){
+            alert("Password should be same");  
+            return false; 
+        }else if(ph<1000000000){
+            alert("Phone number must be of 10 digits");  
+            return false;
+        }else if(g==null || g==""){  
+          alert("Select your gender");  
+          return false;  
+        }
+        }   
+        </script>  
+    </head>
+    <body style="background-color:azure;">
+        <h1 style="text-align: center;"><u>Course Registration Form</u></h1>     
+        <form name="myform" method="post" onsubmit="return validateform()" >  
+        Name: <input type="text" name="name"><br><br>  
+        E-mail: <input type="email" name="email"><br> <br>
+        Password: <input type="password" name="password"><br><br> 
+        Confirm Password: <input type="password" name="rpassword"><br><br> 
+        Phone: <input type="number" name="ph"><br><br>
+        Gender:<br>
+        <input type="radio" name="gender" value="male"> Male<br>
+        <input type="radio" name="gender" value="female"> Female<br>
+        <input type="radio" name="gender" value="others"> others<br><br>
+        <label>
+            Date of birth :
+        </label>
+        <input type="date" name="dob" required><br><br>
+        <label>
+            Department :
+        </label>
+        <select required>
+            <option value="">none</option>
+            <option value="al">AIML</option>
+            <option value="ad">AIDS</option>
+            <option value="cse">CSE</option>
+            <option value="it">IT</option>
+        </select><br><br> 
+        <label>
+            Nationality :
+        </label>
+        <select required>
+            <option value="">none</option>
+            <option value="indian">Indian</option>
+            <option value="others">others</option>
+        </select><br><br> 
+        <label>
+            Course :
+        </label>
+        <select required>
+            <option value="">none</option>
+            <option value="dt">Design Thinking</option>
+            <option value="ei">Emotional Intelligence</option>
+            <option value="eh">Ethical hacking</option>
+            <option value="ps">Privacy and Security</option>
+        </select><br><br>    
+        <label>
+            Address :
+        </label>
+        <br>
+        <textarea cols="60"rows="5"value="address" required></textarea><br><br>
+        <input type="submit" value="register">  
+        </form>
+    </body>
+</html>
